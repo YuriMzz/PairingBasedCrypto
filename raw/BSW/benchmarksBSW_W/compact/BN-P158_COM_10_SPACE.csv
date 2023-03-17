@@ -1,0 +1,6 @@
+function,metric
+bsw_setup,6760
+bsw_enc,6408
+bsw_keygen,3752
+bsw_dec_seq,8032
+bsw_dec_sim,18496

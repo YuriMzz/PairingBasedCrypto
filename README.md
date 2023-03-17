@@ -9,3 +9,5 @@ Tested with a custom version of RELIC library available at: https://github.com/Y
 The Makefile is used to statically compile RELIC, than link it with contiki. An attempt was made to compile the library with GMP (https://github.com/wellsaid/gmp), but it was not possile with the target architecture (Zolertia REmote).
 
 Input data for the cryptographic function have to be given using compilation variables. 
+
+Directory raw contains data from experiments along with some plots

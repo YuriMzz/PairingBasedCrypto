@@ -1,0 +1,6 @@
+function,metric
+gpsw_setup,6760
+gpsw_enc,6408
+gpsw_keygen,4696
+gpsw_dec_sim,11808
+gpsw_dec_seq,7600
