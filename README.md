@@ -13,8 +13,12 @@
 * I also provide the bash script i used to start it setting the right privileges and mounting volumes
 
 ## Compiling
-
 * `Makefile` is used to statically compile RELIC, than link it with contiki. An attempt was made to compile the library with GMP (https://github.com/wellsaid/gmp), but it was not possile with the target architecture (Zolertia REmote).
+* in order to compile you have to:
+  * clone contiki-NG and RELIC inside the root folder
+  * start docker container
+  * use the scripts to compile and flash into the target platform
+
 
 ## Usage
 * Input data for the cryptographic function have to be given using compilation variables. 
