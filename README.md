@@ -6,6 +6,9 @@
 
 * Tested with a custom version of RELIC library available at: https://github.com/YuriMzz/relic/tree/yuri_dbg
   * diff against the original version are related to integration of the logging system with contiki-NG and to the optimization wrt target platform
+  
+* Tested with this version of contiki-NG: https://github.com/contiki-ng/contiki-ng/tree/95037980e21180833cc73fe17371f38e732e5206
+  * probably newer versions will work fine as well
 
 ## Envinroment
 * I used contiker https://docs.contiki-ng.org/en/develop/doc/getting-started/Docker.html on an Arch Linux host system.
