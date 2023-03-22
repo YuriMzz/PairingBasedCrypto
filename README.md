@@ -23,15 +23,16 @@
   * use the scripts to compile and flash into the target platform
 
 ## Usage
-* `make librelic TARGET=zoul main.upload login` is the command to compile and execute
-* Inside the command is possible to define envinroment variables, wich are used during compilation ans execution
+* `make librelic TARGET=zoul main.upload login` is the command to compile and execute; this by default will execute all schemes (exept ABE)
+* Inside the command is possible to define envinroment variables, wich are used during compilation and execution
   * `RELIC_CMAKE_SCRIPT` defines the file containing RELIC configuration for the specific curve
   * `BENCH_TIME` if present will configure the compilation for measuring the execution time of each function
   * `BENCH_SPACE` if present will configure the compilation for measuring the stack used during execution
     * this configuration will negatively impact execution time so it's not possible to mesure TIME and SPACE in the same run
   * `FUNCTIONS` its a space separated string wich represent the list of schemes to be tested; conditional compilation is done in order to minimize binary size.
-    * available schemes are: IBE BBS BBS2 BLS CLS ZSS IBE ZH GPSW BSW. PYS scheme implementation is incomplete.
-* IBE and Short Signature schemes generate random input for benchmarking inside the binary, while input data for ABE cryptographic function have to be given using envinroment variables. 
+    * available schemes are: IBE BBS BBS2 BLS CLS ZSS IBE ZH GPSW BSW.
+  * implementation type: GPSW_SIM and BSW_SIM will trigger simultaneus implementation (for GPSW and BSW), otherwise sequential is used
+* IBE and Short Signature schemes generate random input for benchmarking inside the binary, while input data for ABE cryptographic function have to be given using envinroment variables (see Makefile and source code for details, or "batch" scripts for random examples). 
 * `run-single.sh` is useful for dedugging a specific input
 
 ## Batch runs
@@ -45,7 +46,7 @@
     * each scheme have a different format of input parameters, and dedicated function to generate them randomly (average and worst scenario)
     * scenario and implementation type (for GPSW and BSW) are fixed and have to be changed manually
 * `power_meter.py` is used to obtain data from the AVHzY CT-2 power meter. This tool was insiperd by https://github.com/wellsaid/Py-AVHzY-CT-2
-  * the script is called inside `run-<>-batch.py` scripts when TIME benchmark is executed; this is an attempt to obtain the maximum available precision out of the instrument, but it turns out to be quite useless, because power consumption is resulted to be proportional to the execution time.
+  * the script is called inside `run-<>-batch.py` scripts when TIME benchmark is executed; this is an attempt to obtain the maximum available precision out of the instrument, but it turns out to be quite useless, because energy consumption is resulted to be proportional to the execution time.
 
 ## Analytics
 * Directory `raw` contains data from experiments along with some plots
