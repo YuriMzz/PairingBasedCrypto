@@ -35,16 +35,17 @@
 * `run-single.sh` is useful for dedugging a specific input
 
 ## Batch runs
-* In order to run repetitive runs and collect data i made two scripts; they don't take command line parameters, but one can change the variables in the code in order to change the execution
+* In order to run repetitive runs and collect data i made two scripts; they don't take command line parameters, but one can change the variables values in the code in order to change the execution
   * `run-batch.py` is used for IBE and Short Signatures schemes
     * this script only take care to execute the program 2 times (TIME and SPACE) for each curve in the array CURVES and colllect the results in the appropriate folder (repetition are done inside the program)
   * `run-<scheme>-batch.py` are used for other schemes 
     * those scripts are able to generate different input parameters for each run and they will perform a variable number of repetition specified with the variable REPETITIONS; 
     * they can also automatically test different number of attributes (contained in the array ATTRIBUTES)
+    * the benchmark type (TIME or SPACE) have to be selected manually with the variable `bench_type`
     * each scheme have a different format of input parameters, and dedicated function to generate them randomly (average and worst scenario)
     * scenario and implementation type (for GPSW and BSW) are fixed and have to be changed manually
 * `power_meter.py` is used to obtain data from the AVHzY CT-2 power meter. This tool was insiperd by https://github.com/wellsaid/Py-AVHzY-CT-2
-  * the script is called inside `run-<>-batch.py` scripts; this is an attempt to obtain the maximum available precision out of the instrument, but it turns out to be quite useless, because the poewr consumpion is resulted to be proportional to the execution time.
+  * the script is called inside `run-<>-batch.py` scripts when TIME benchmark is executed; this is an attempt to obtain the maximum available precision out of the instrument, but it turns out to be quite useless, because power consumption is resulted to be proportional to the execution time.
 
 ## Analytics
 * Directory `raw` contains data from experiments along with some plots
