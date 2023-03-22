@@ -37,7 +37,7 @@
 ## Batch runs
 * In order to run repetitive runs and collect data i made two scripts; they don't take command line parameters, but one can change the variables in the code in order to change the execution
   * `run-batch.py` is used for IBE and Short Signatures schemes
-    * this script only take care to execute the program 2 times for each curve in the array CURVES and colllect the results in the appropriate folder
+    * this script only take care to execute the program 2 times (TIME and SPACE) for each curve in the array CURVES and colllect the results in the appropriate folder (repetition are done inside the program)
   * `run-<scheme>-batch.py` are used for other schemes 
     * those scripts are able to generate different input parameters for each run and they will perform a variable number of repetition specified with the variable REPETITIONS; 
     * they can also automatically test different number of attributes (contained in the array ATTRIBUTES)
