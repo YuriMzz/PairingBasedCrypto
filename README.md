@@ -29,7 +29,7 @@
   * `BENCH_TIME` if present will configure the compilation for measuring the execution time of each function
   * `BENCH_SPACE` if present will configure the compilation for measuring the stack used during execution
     * this configuration will negatively impact execution time so it's not possible to mesure TIME and SPACE in the same run
-  * `FUNCTIONS` its a space separated string wich represent the list of schemes to be tested; conditional compilation is done in order to minimize binary size.
+  * `FUNCTIONS` it's a space separated string wich represent the list of schemes to be tested; conditional compilation is done in order to minimize binary size.
     * available schemes are: IBE BBS BBS2 BLS CLS ZSS IBE ZH GPSW BSW.
   * implementation type: GPSW_SIM and BSW_SIM will trigger simultaneus implementation (for GPSW and BSW), otherwise sequential is used
 * IBE and Short Signature schemes generate random input for benchmarking inside the binary, while input data for ABE cryptographic function have to be given using envinroment variables (see Makefile and source code for details, or "batch" scripts for random examples). 
